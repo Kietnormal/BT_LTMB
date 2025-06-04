@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_task/Screens/forgot_password_screen.dart';
+import 'package:smart_task/Screens/main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()),
+          MaterialPageRoute(builder: (_) => const MainScreen()),
         );
       }
     });
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Image.asset('assets/images/image 1.png', height: 100),
             const SizedBox(height: 20),
             const Text(
-              'UTH SmartTasks',
+              'UTH Library',
               style: TextStyle(
                 fontSize: 30,
                 color: Color(0xFF006EE9),

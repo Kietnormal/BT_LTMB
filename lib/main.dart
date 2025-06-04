@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_task/Screens/Splash_Screen.dart';
+import 'screens/Splash_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,57 +11,42 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Password Reset Flow',
+      title: 'Hệ thống Quản lý Thư viện',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Roboto',
-        inputDecorationTheme: InputDecorationTheme(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
-            borderSide: BorderSide(color: Colors.grey.shade300),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
-            borderSide: BorderSide(color: Colors.grey.shade300),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
-            borderSide: const BorderSide(color: Color(0xFF007BFF)),
-          ),
-          filled: true,
-          fillColor: Colors.grey.shade100,
-          hintStyle: TextStyle(color: Colors.grey.shade500),
-          prefixIconColor: Colors.grey.shade500,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF007BFF),
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            textStyle: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0),
-            ),
-            minimumSize: const Size(double.infinity, 50),
-          ),
-        ),
+        scaffoldBackgroundColor: Colors.grey[200],
+        fontFamily: 'Arial',
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xFF007BFF)),
+          foregroundColor: Colors.black,
+          elevation: 1,
           titleTextStyle: TextStyle(
-            color: Colors.black,
+            fontFamily: 'Arial',
             fontSize: 20,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateProperty.resolveWith<Color?>((
+            Set<MaterialState> states,
+          ) {
+            if (states.contains(MaterialState.selected)) {
+              return Colors.red;
+            }
+            return null;
+          }),
+          checkColor: MaterialStateProperty.all(Colors.white),
+          side: MaterialStateBorderSide.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return const BorderSide(color: Colors.red, width: 2);
+            }
+            return const BorderSide(color: Colors.grey, width: 2);
+          }),
+        ),
       ),
-      debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
