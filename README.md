@@ -1,4 +1,4 @@
-# smart_task
+# smart_taskv2
 
 A new Flutter project.
 
