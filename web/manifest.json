@@ -1,6 +1,6 @@
 {
-    "name": "bai04",
-    "short_name": "bai04",
+    "name": "smart_task",
+    "short_name": "smart_task",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
