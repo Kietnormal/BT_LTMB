@@ -1,6 +1,6 @@
 {
-    "name": "myapp",
-    "short_name": "myapp",
+    "name": "uth_smarttasks",
+    "short_name": "uth_smarttasks",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
